@@ -1,0 +1,4 @@
+step_definition\LoginSteps.class
+step_definition\Hooks.class
+step_definition\PurchaseSteps.class
+step_definition\RunCukesTest.class
