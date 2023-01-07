@@ -1,8 +1,10 @@
 package step_definition;
 
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.example.pageObject.LoginPage;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 public class LoginSteps {
@@ -26,5 +28,10 @@ public class LoginSteps {
         Thread.sleep(5000);
 
 
+    }
+    @Then("User see error \"(.*)\" on login page")
+    public void getErrorText(String errorText){
+        LoginPage loginpage = new LoginPage(webDriver);
+        Assert.assertEquals(errorText, loginpage.getErrorText());
     }
 }

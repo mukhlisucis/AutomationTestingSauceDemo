@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="15" failures="0" name="step_definition.RunCukesTest" time="1.294" errors="0" skipped="0">
+<testsuite tests="18" failures="0" name="step_definition.RunCukesTest" time="1.807" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2022.3.1"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -31,7 +31,7 @@
     <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3.1\plugins\maven\lib\maven-event-listener.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3.1\plugins\maven\lib\maven3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_202\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\USER\AppData\Local\gitkraken\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3.1\bin;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_202\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Program Files\Git\cmd;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\USER\AppData\Local\gitkraken\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3.1\bin;;."/>
     <property name="jansi.passthrough" value="true"/>
     <property name="maven.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3.1\plugins\maven\lib\maven3/conf"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -65,19 +65,22 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Scenario: Can check out list of cart that user choosing" name="Given User open the website sauce demo" time="0.038"/>
+  <testcase classname="Scenario: Can check out list of cart that user choosing" name="Given User open the website sauce demo" time="0.009"/>
   <testcase classname="Scenario: Can check out list of cart that user choosing" name="When User input &quot;standard_user&quot; ad userName and input &quot;secret_sauce&quot; as password" time="0"/>
-  <testcase classname="Scenario: Can check out list of cart that user choosing" name="Given Sort Name Z to A" time="0"/>
+  <testcase classname="Scenario: Can check out list of cart that user choosing" name="Then verify display landing page" time="0"/>
+  <testcase classname="Scenario: Can check out list of cart that user choosing" name="When User sort Name Z to A" time="0"/>
   <testcase classname="Scenario: Can check out list of cart that user choosing" name="And User pick itemSauce Labs Onesie" time="0"/>
-  <testcase classname="Scenario: Can check out list of cart that user choosing" name="And User pick item Sauce Labs Fleece Jacket" time="0.001"/>
+  <testcase classname="Scenario: Can check out list of cart that user choosing" name="And User pick item Test.allTheThings T-Shirt Red" time="0"/>
   <testcase classname="Scenario: Can check out list of cart that user choosing" name="And User click shopping cart" time="0"/>
-  <testcase classname="Scenario: Can check out list of cart that user choosing" name="And Cek items 1 name on cart menu" time="0"/>
-  <testcase classname="Scenario: Can check out list of cart that user choosing" name="And Cek items 2 name on cart menu" time="0"/>
+  <testcase classname="Scenario: Can check out list of cart that user choosing" name="Then Verify All item" time="0"/>
+  <testcase classname="Scenario: Can check out list of cart that user choosing" name="And Remove item 2 T-Shirt Red" time="0.001"/>
   <testcase classname="Scenario: Can check out list of cart that user choosing" name="And Click button checkout" time="0"/>
-  <testcase classname="Scenario: Can check out list of cart that user choosing" name="And User input &quot;Mukhlis&quot; as firstName and input &quot;Anshori&quot; as lastName and input &quot;65134&quot; as ZIP code" time="0"/>
-  <testcase classname="Scenario: Can check out list of cart that user choosing" name="And Cek total Price" time="0.001"/>
-  <testcase classname="Scenario: Can check out list of cart that user choosing" name="And Click button finish" time="0"/>
-  <testcase classname="Scenario: Can check out list of cart that user choosing" name="And verify value THANK YOU FOR YOUR ORDER" time="0"/>
-  <testcase classname="Scenario: Can check out list of cart that user choosing" name="Then Verify THANK YOU FOR YOUR ORDER displayed" time="0"/>
-  <testcase classname="Scenario: Can check out list of cart that user choosing" name="Scenario: Can check out list of cart that user choosing" time="1.254"/>
+  <testcase classname="Scenario: Can check out list of cart that user choosing" name="Given User input &quot;Mukhlis&quot; as firstName and input &quot;Anshori&quot; as lastName and input &quot;65134&quot; as ZIP code" time="0.002"/>
+  <testcase classname="Scenario: Can check out list of cart that user choosing" name="Then verify display item total" time="0"/>
+  <testcase classname="Scenario: Can check out list of cart that user choosing" name="Then verify display Tax" time="0"/>
+  <testcase classname="Scenario: Can check out list of cart that user choosing" name="Then verify display Total Payment" time="0"/>
+  <testcase classname="Scenario: Can check out list of cart that user choosing" name="And Click button finish" time="0.007"/>
+  <testcase classname="Scenario: Can check out list of cart that user choosing" name="And Verify THANK YOU FOR YOUR ORDER displayed" time="0"/>
+  <testcase classname="Scenario: Can check out list of cart that user choosing" name="Then verify value THANK YOU FOR YOUR ORDER" time="0"/>
+  <testcase classname="Scenario: Can check out list of cart that user choosing" name="Scenario: Can check out list of cart that user choosing" time="1.788"/>
 </testsuite>

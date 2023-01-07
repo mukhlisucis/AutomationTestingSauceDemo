@@ -4,9 +4,11 @@ package step_definition;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.example.pageObject.CheckInformation;
 import org.example.pageObject.InventoriPage;
 import org.example.pageObject.LoginPage;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -20,10 +22,11 @@ public class PurchaseSteps {
         this.webDriver = Hooks.webDriver;
     }
 
-    @Given("Sort Name Z to A")
-    public void selectSort() throws InterruptedException{
-        Select select = new Select(webDriver.findElement(By.xpath("//select[@class='product_sort_container']")));
-        select.selectByVisibleText("Name (Z to A)");
+    @When("User sort Name Z to A")
+    public void selectProductContainer()throws InterruptedException{
+        InventoriPage inventoriPage = new InventoriPage(webDriver);
+        String a = "Name (Z to A)";
+        inventoriPage.selectProductContainer(a);
         Thread.sleep(3000);
     }
     @And("User pick itemSauce Labs Onesie")
@@ -32,7 +35,7 @@ public class PurchaseSteps {
         inventoriPage.clickBasket1();
         Thread.sleep(2000);
     }
-    @And("User pick item Sauce Labs Fleece Jacket")
+    @And("User pick item Test.allTheThings T-Shirt Red")
     public void clickItemBasket2() throws InterruptedException {
         InventoriPage inventoriPage = new InventoriPage(webDriver);
         inventoriPage.clickBasket2();
@@ -45,19 +48,18 @@ public class PurchaseSteps {
         inventoriPage.clickShoppingCart();
         Thread.sleep(5000);
     }
-    @And("Cek items 1 name on cart menu")
-    public void cekNameCart1()throws InterruptedException{
-        InventoriPage inventoriPage = new InventoriPage(webDriver);
-        String namaItem1 = webDriver.findElement(By.xpath("//div[.='Sauce Labs Onesie']")).getText();
-        System.out.println(namaItem1);
 
+    @Then ("Verify All item")
+    public void verifyAllItem(){
+        InventoriPage inventoriPage = new InventoriPage(webDriver);
+        Assert.assertTrue(inventoriPage.displayAllItem());
     }
-    @And("Cek items 2 name on cart menu")
-    public void cekNameCart2()throws InterruptedException{
-        InventoriPage inventoriPage = new InventoriPage(webDriver);
-        String namaItem2 = webDriver.findElement(By.xpath("//div[.='Sauce Labs Fleece Jacket']")).getText();
-        System.out.println(namaItem2);
 
+    @And("Remove item 2 T-Shirt Red")
+    public void removeItem2() throws InterruptedException {
+        InventoriPage inventoriPage = new InventoriPage(webDriver);
+        inventoriPage.setRemoveItem2();
+        Thread.sleep(3000);
     }
 
     @And("Click button checkout")
@@ -66,7 +68,7 @@ public class PurchaseSteps {
         inventoriPage.clickCheckout();
         Thread.sleep(5000) ;
     }
-    @And("User input \"(.*)\" as firstName and input \"(.*)\" as lastName and input \"(.*)\" as ZIP code")
+    @Given("User input \"(.*)\" as firstName and input \"(.*)\" as lastName and input \"(.*)\" as ZIP code")
     public void inputDataDiri(String firstName, String lastName, String zipCode ) throws InterruptedException {
         CheckInformation isiInformasi = new CheckInformation(webDriver);
         isiInformasi.setFirstName(firstName);
@@ -77,32 +79,46 @@ public class PurchaseSteps {
         Thread.sleep(4000) ;
 
     }
-    @And("Cek total Price")
-    public void cekTotalPrice()throws InterruptedException{
-        InventoriPage inventoriPage = new InventoriPage(webDriver);
-        String totalHarga = webDriver.findElement(By.xpath("//div[@class='summary_total_label']")).getText();
-        System.out.println(totalHarga);
-        Thread.sleep(4000) ;
-
+    @Then ("verify display item total")
+    public void displayItemTotal(){
+        CheckInformation itemTotal = new CheckInformation(webDriver);
+        Assert.assertTrue(itemTotal.displayitemTotal());
     }
+    @Then ("verify display Tax")
+    public void displayTax(){
+        CheckInformation totalTax = new CheckInformation(webDriver);
+        Assert.assertTrue(totalTax.displayTax());
+    }
+    @Then ("verify display Total Payment")
+    public void displayTotalPayment(){
+        CheckInformation totalPayment = new CheckInformation(webDriver);
+        Assert.assertTrue(totalPayment.displayTotalPayment());
+    }
+
+
     @And("Click button finish")
     public void clickFinish()throws InterruptedException{
         CheckInformation isiInformasi = new CheckInformation(webDriver);
         isiInformasi.setClickFinish();
         Thread.sleep(5000) ;
     }
-    @And("verify value THANK YOU FOR YOUR ORDER")
+    @Then("verify value THANK YOU FOR YOUR ORDER")
     public void cekValueThanks()throws InterruptedException {
         InventoriPage inventoriPage = new InventoriPage(webDriver);
         String thankYou = webDriver.findElement(By.xpath("//h2[@class='complete-header']")).getText();
         System.out.println(thankYou);
         Thread.sleep(4000);
     }
-    @Then("Verify THANK YOU FOR YOUR ORDER displayed")
+    @And("Verify THANK YOU FOR YOUR ORDER displayed")
     public void verivyOrderFinished()throws InterruptedException{
         CheckInformation isiInformasi = new CheckInformation(webDriver);
         isiInformasi.setVerifyOrder();
 
+    }
+    @Then ("verify display landing page")
+    public void verifyLandingPage(){
+        InventoriPage inventoriPage = new InventoriPage(webDriver);
+        Assert.assertTrue(inventoriPage.displayLandingPage());
     }
 
 

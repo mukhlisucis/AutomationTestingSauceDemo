@@ -30,6 +30,15 @@ public class CheckInformation {
 
     @FindBy(xpath = "//h2[@class='complete-header']")
     private WebElement verifyOrder ;
+
+    @FindBy(xpath = "//div[@class='summary_subtotal_label']")
+    private WebElement itemTotal ;
+
+    @FindBy (xpath = "//div[@class='summary_tax_label']")
+    private WebElement taxTotal ;
+
+    @FindBy (xpath ="//div[@class='summary_total_label']")
+    private WebElement totalPayment ;
     public void setFirstName(String firstNameUser){
 
         firstName.sendKeys(firstNameUser);
@@ -53,6 +62,18 @@ public class CheckInformation {
 
     public boolean setVerifyOrder(){
         verifyOrder.isDisplayed();
+        return true ;
+    }
+    public boolean displayitemTotal(){
+        itemTotal.isDisplayed();
+        return true ;
+    }
+    public boolean displayTax(){
+        taxTotal.isDisplayed();
+        return true ;
+    }
+    public boolean displayTotalPayment(){
+        totalPayment.isDisplayed();
         return true ;
     }
 

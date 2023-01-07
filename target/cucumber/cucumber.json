@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 12277844100,
+              "duration": 19552233200,
               "status": "passed"
             },
             "match": {
@@ -21,7 +21,7 @@
         "after": [
           {
             "result": {
-              "duration": 1219870700,
+              "duration": 1785287000,
               "status": "passed"
             },
             "match": {
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 591555800,
+              "duration": 1284530000,
               "status": "passed"
             },
             "line": 5,
@@ -46,7 +46,7 @@
           },
           {
             "result": {
-              "duration": 5856384200,
+              "duration": 7285105500,
               "status": "passed"
             },
             "line": 6,
@@ -68,22 +68,34 @@
           },
           {
             "result": {
-              "duration": 3371336100,
+              "duration": 133452000,
               "status": "passed"
             },
             "line": 7,
-            "name": "Sort Name Z to A",
+            "name": "verify display landing page",
             "match": {
-              "location": "PurchaseSteps.selectSort()"
+              "location": "PurchaseSteps.verifyLandingPage()"
             },
-            "keyword": "Given "
+            "keyword": "Then "
           },
           {
             "result": {
-              "duration": 2156059100,
+              "duration": 3379500500,
               "status": "passed"
             },
             "line": 8,
+            "name": "User sort Name Z to A",
+            "match": {
+              "location": "PurchaseSteps.selectProductContainer()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2165514100,
+              "status": "passed"
+            },
+            "line": 9,
             "name": "User pick itemSauce Labs Onesie",
             "match": {
               "location": "PurchaseSteps.clickItemBasket1()"
@@ -92,11 +104,11 @@
           },
           {
             "result": {
-              "duration": 2133115800,
+              "duration": 2146932900,
               "status": "passed"
             },
-            "line": 9,
-            "name": "User pick item Sauce Labs Fleece Jacket",
+            "line": 10,
+            "name": "User pick item Test.allTheThings T-Shirt Red",
             "match": {
               "location": "PurchaseSteps.clickItemBasket2()"
             },
@@ -104,10 +116,10 @@
           },
           {
             "result": {
-              "duration": 5186622700,
+              "duration": 5251553900,
               "status": "passed"
             },
-            "line": 10,
+            "line": 11,
             "name": "User click shopping cart",
             "match": {
               "location": "PurchaseSteps.clickShoppingCart()"
@@ -116,34 +128,34 @@
           },
           {
             "result": {
-              "duration": 105310600,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "Cek items 1 name on cart menu",
-            "match": {
-              "location": "PurchaseSteps.cekNameCart1()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 71954800,
+              "duration": 268897400,
               "status": "passed"
             },
             "line": 12,
-            "name": "Cek items 2 name on cart menu",
+            "name": "Verify All item",
             "match": {
-              "location": "PurchaseSteps.cekNameCart2()"
+              "location": "PurchaseSteps.verifyAllItem()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3234019900,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "Remove item 2 T-Shirt Red",
+            "match": {
+              "location": "PurchaseSteps.removeItem2()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 5215521800,
+              "duration": 5328314000,
               "status": "passed"
             },
-            "line": 13,
+            "line": 14,
             "name": "Click button checkout",
             "match": {
               "location": "PurchaseSteps.clickCheckout()"
@@ -152,10 +164,10 @@
           },
           {
             "result": {
-              "duration": 8863930600,
+              "duration": 9171004200,
               "status": "passed"
             },
-            "line": 14,
+            "line": 15,
             "name": "User input \"Mukhlis\" as firstName and input \"Anshori\" as lastName and input \"65134\" as ZIP code",
             "match": {
               "arguments": [
@@ -174,26 +186,50 @@
               ],
               "location": "PurchaseSteps.inputDataDiri(String,String,String)"
             },
-            "keyword": "And "
+            "keyword": "Given "
           },
           {
             "result": {
-              "duration": 4064608400,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "Cek total Price",
-            "match": {
-              "location": "PurchaseSteps.cekTotalPrice()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 5165462300,
+              "duration": 113222900,
               "status": "passed"
             },
             "line": 16,
+            "name": "verify display item total",
+            "match": {
+              "location": "PurchaseSteps.displayItemTotal()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 98775600,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "verify display Tax",
+            "match": {
+              "location": "PurchaseSteps.displayTax()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 118469500,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "verify display Total Payment",
+            "match": {
+              "location": "PurchaseSteps.displayTotalPayment()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5314256400,
+              "status": "passed"
+            },
+            "line": 19,
             "name": "Click button finish",
             "match": {
               "location": "PurchaseSteps.clickFinish()"
@@ -202,25 +238,25 @@
           },
           {
             "result": {
-              "duration": 4079399500,
+              "duration": 847906900,
               "status": "passed"
             },
-            "line": 17,
-            "name": "verify value THANK YOU FOR YOUR ORDER",
+            "line": 20,
+            "name": "Verify THANK YOU FOR YOUR ORDER displayed",
             "match": {
-              "location": "PurchaseSteps.cekValueThanks()"
+              "location": "PurchaseSteps.verivyOrderFinished()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 59489200,
+              "duration": 5261844800,
               "status": "passed"
             },
-            "line": 18,
-            "name": "Verify THANK YOU FOR YOUR ORDER displayed",
+            "line": 21,
+            "name": "verify value THANK YOU FOR YOUR ORDER",
             "match": {
-              "location": "PurchaseSteps.verivyOrderFinished()"
+              "location": "PurchaseSteps.cekValueThanks()"
             },
             "keyword": "Then "
           }
